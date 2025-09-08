@@ -7,3 +7,10 @@ services:
       - ./server/pb_data:/pb/pb_data
       - ./server/pb_migrations:/pb/pb_migrations
       - ./server/pb_hooks:/pb/pb_hooks
+
+  client:
+    build: ./client
+    ports:
+      - '80:3000'
+    depends_on:
+      - server
